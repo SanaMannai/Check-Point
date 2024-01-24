@@ -1,47 +1,56 @@
-// ex-1
 
-ALGORITHM sum-element
+ALGORITHM insertion_sort 
+
 VAR
-    i, j:INTEGER
-    set1, set2:INTEGER
-    set1:=[3 , 1 , 7 , 9]
-    set2:=[2 , 4 , 1 , 9 , 3]
-    bnt: BOOLEAN:=false
-    sum:INTEGER:=0
+    i,j:INTEGER;
+    arr:INTEGER;
+    n:INTEGER:=length-1;
+
 BEGIN
-    FOR i FROM 0 TO set1 STEP 1  DO
-       FOR j FROM 0 TO set2 STEP 1  DO
-        IF (set1[i]=set2[j]) THEN
-            bnt:=true
-            END_IF
-       END_FOR
-       IF (bnt=false) THEN
-        sum:=sum+set1[i]
-       END_IF
-    END_FOR
 
-    FOR i FROM 0 TO set2 STEP 1  DO
-       FOR j FROM 0 TO set1 STEP 1  DO
-        IF (set1[j]=set2[i]) THEN
-            bnt:=true
-            END_IF
-       END_FOR
-       IF (bnt=false) THEN
-        sum:=sum+set2[i] 
-       END_IF
-    END_FOR
+ FOR i FROM 0 TO arr.length-1 STEP 1 DO
+    n:= arr[i]
+ j=i-1;
+  WHILE (arr[j] > n AND j >=0) DO
+  arr[j+1] := arr[j];
+  j:=j-1
+  END_WHILE
+  arr[j+1] := n
+ END_FOR
+    
+END
 
-    //ex-2
 
-    a : ARRAY_OF FLOAT[M][N];
-b : ARRAY_OF FLOAT[N][O];
-c : ARRAY_OF FLOAT[M][O];
-FOR i FROM 0 TO M-1 DO
-    FOR j FROM 0 TO O-1 DO
-        FOR k FROM 0 TO N-1 DO
-            // Compute dot product of row i and column j
-            c[i][j] := c[i][j] + a[i][k] *b[k][j];
-        END_FOR
-    END_FOR
-END_FOR
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // git remote add origin https://github.com/SanaMannai/CheckPoint-Algo.git
